@@ -10,7 +10,7 @@ By
 
 ### Coda
 
-(todo coda icon from presskit)
+<img src="img/coda.png" width="50%" />
 
 !!!
 
@@ -43,7 +43,9 @@ Note: 3 Roles!
 
 ### End-user
 
-(todo finger)
+<img src="img/finger.png" width="40%" />
+
+> https://pixabay.com/vectors/finger-fist-glove-gun-hand-point-2029729/
 
 Note: Maybe you're delegating your stake, but you want to be able to check your balance, or make a transaction. Maybe you're using a hardware wallet
 
@@ -51,7 +53,9 @@ Note: Maybe you're delegating your stake, but you want to be able to check your 
 
 ### End-user: Non-consensus node
 
-(todo magnifying glass)
+![magnifying glass](img/magnifying.png)
+
+> https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Magnifying_glass_CC0.svg/512px-Magnifying_glass_CC0.svg.png
 
 Note: Non-consensus node; unlike a light-node in other networks, does fully verify the state (as easy as checking a snark)
 
@@ -75,7 +79,9 @@ Note: Very low resource requirements (on the order of 100kb of state) ; even Saf
 
 ### Staker
 
-(todo coin)
+<img src="img/coin.png" width="80%" />
+
+> http://pngimg.com/uploads/coin/coin_PNG36877.png
 
 Note: "Validator" or "Baker"; this is a node that will stake and participate in the network
 
@@ -83,7 +89,9 @@ Note: "Validator" or "Baker"; this is a node that will stake and participate in 
 
 ### Staker: Block producer
 
-(todo building-block)
+<img src="img/block.png" width="80%" />
+
+> https://www.needpix.com/photo/download/598075/building-block-plastic-toy-red-architecture-free-vector-graphics-free-pictures-free-photos-free-images
 
 Note: The staker runs consensus (which we'll touch on later) and hopes to produce blocks. ...
 
@@ -107,9 +115,17 @@ Note: The staker runs consensus (which we'll touch on later) and hopes to produc
 
 ### Snark Worker
 
-(todo pickaxe)
+<img src="img/pickaxe.png" width="40%" />
+
+> https://www.needpix.com/photo/download/1195100/pickax-tool-dig-build-construction-dwarf-mining-mine-design
 
 Note: The snark worker is unique to our network 
+
+!!!
+
+### Snark Worker
+
+<img src="img/compressed-2.png" width="70%" height="70%"></img>
 
 !!!
 
@@ -119,7 +135,9 @@ Note: The snark worker is unique to our network
 
 ### Snark Worker: Snarketplace
 
-(todo marketplace)
+<img src="img/marketplace.jpg" width="80%" />
+
+> https://pixabay.com/photos/marketplace-candy-sweets-market-4121997/
 
 !!!
 
@@ -139,7 +157,9 @@ Three roles
 
 ### Ouroboros
 
-(todo ouroboros)
+<img src="img/ouroboros.png" width="50%" />
+
+> https://upload.wikimedia.org/wikipedia/commons/f/fa/Ouroboros.png
 
 !!!
 
@@ -162,7 +182,9 @@ Three roles
 
 ### Genesis: Long forks
 
-(todo tuning fork)
+<img src="img/fork.jpg" width="70%" />
+
+> https://upload.wikimedia.org/wikipedia/commons/5/5d/A440_Tuning_Fork.jpg
 
 !!!
 
