@@ -174,6 +174,8 @@ Three roles
 
 ### Ouroboros Basics
 
+Time is broken into Slots (like cycles of blocks in tezos) TODO
+
 !!!
 
 ### Praos: VRFs
