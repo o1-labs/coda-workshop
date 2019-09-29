@@ -43,11 +43,11 @@ Note: 3 Roles!
 
 ### Roles in Coda
 
-1. End-user
+1. Non-consensus
 
 !!!
 
-### End-user
+### Non-consensus Actor
 
 <img src="img/finger.png" width="40%" />
 
@@ -57,7 +57,7 @@ Note: Maybe you're delegating your stake, but you want to be able to check your 
 
 !!!
 
-### End-user: Non-consensus node
+### Non-consensus Node
 
 ![magnifying glass](img/magnifying.png)
 
@@ -67,7 +67,7 @@ Note: Non-consensus node; unlike a light-node in other networks, does fully veri
 
 !!!
 
-### End-user: Node Requirements
+### Non-consensus Node: Requirements
 
 * A computer
 * <!-- .element: class="fragment" data-fragment-index="2" --> Browser <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -78,7 +78,7 @@ Note: Very low resource requirements (on the order of 100kb of state) ; even Saf
 
 ### Roles in Coda
 
-1. ~~End-user~~
+1. ~~Non-consensus~~
 2. Snark Worker
 
 !!!
@@ -141,13 +141,13 @@ Note: Proving SNARKs constantly, and needs to offer lower fees than others. Does
 
 ### Roles in Coda
 
-1. ~~End-user~~
+1. ~~Non-conesnsus~~
 2. ~~Snark worker~~
-3. Staker
+3. Block producer
 
 !!!
 
-### Staker
+### Block producer
 
 <img src="img/coin.png" width="80%" />
 
@@ -157,7 +157,7 @@ Note: "Validator" or "Baker"; this is a node that will stake and participate in 
 
 !!!
 
-### Staker: Block producer
+### Block producer
 
 <img src="img/block.png" width="80%" />
 
@@ -186,7 +186,7 @@ Note: Found in snarkpool that snark workers have gossipped
 
 !!!
 
-### Staker: Node requirements
+### Block Producer: Node requirements
 
 * Harddrive space to store the ledger
 * <!-- .element: class="fragment" data-fragment-index="1" --> Compute to produce SNARKs fast <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -198,13 +198,15 @@ Note: Found in snarkpool that snark workers have gossipped
 
 Three roles
 
-* <!-- .element: class="fragment" data-fragment-index="1" --> End-user <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Snark Worker <!-- .element: class="fragment" data-fragment-index="2" -->
+* <!-- .element: class="fragment" data-fragment-index="1" --> Non-conesnsus <!-- .element: class="fragment" data-fragment-index="1" -->
+* <!-- .element: class="fragment" data-fragment-index="2" --> Snark worker <!-- .element: class="fragment" data-fragment-index="2" -->
 * <!-- .element: class="fragment" data-fragment-index="3" --> Block producer <!-- .element: class="fragment" data-fragment-index="3" -->
 
 !!!
 
 ### Consensus
+
+<img src="img/builder.jpg" width="50%" />
 
 !!!
 
@@ -213,6 +215,8 @@ Three roles
 <img src="img/ouroboros.png" width="50%" />
 
 > https://upload.wikimedia.org/wikipedia/commons/f/fa/Ouroboros.png
+
+Note: Discovered by the folks at IOHK
 
 !!!
 
@@ -227,15 +231,18 @@ Three roles
 
 ### Ouroboros Basics
 
-Time is broken into epochs (like cycles of blocks in tezos) TODO
+* Time is broken into epochs
+* <!-- .element: class="fragment" data-fragment-index="1" --> Stake is counted a 1-2 epochs in the past <!-- .element: class="fragment" data-fragment-index="1" -->
+* <!-- .element: class="fragment" data-fragment-index="2" --> Select longest fork to decide which chain is stronger <!-- .element: class="fragment" data-fragment-index="2" -->
 
-Stake is counted a 1-2 epochs in the past (just like in tezos it's counted a few cycles in the past)
+Note: Like tezos, cycles of blocks are like epochs ;; just like in tezos, counted a few cycles in the past
 
 !!!
 
 ### Praos: VRFs
 
-* Praos adds support for single-message using verifiable random functions
+* Praos adds support for a secret, secure weighted dice roll
+* <!-- .element: class="fragment" data-fragment-index="1" --> Uses verifiable random functions <!-- .element: class="fragment" data-fragment-index="1" -->
 
 !!!
 
@@ -244,6 +251,8 @@ Stake is counted a 1-2 epochs in the past (just like in tezos it's counted a few
 <img src="img/fork.jpg" width="70%" />
 
 > https://upload.wikimedia.org/wikipedia/commons/5/5d/A440_Tuning_Fork.jpg
+
+Note: Look at 
 
 !!!
 
