@@ -174,7 +174,9 @@ Three roles
 
 ### Ouroboros Basics
 
-Time is broken into Slots (like cycles of blocks in tezos) TODO
+Time is broken into epochs (like cycles of blocks in tezos) TODO
+
+Stake is counted a 1-2 epochs in the past (just like in tezos it's counted a few cycles in the past)
 
 !!!
 
