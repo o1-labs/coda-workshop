@@ -18,16 +18,70 @@ Note: We'll save lots of time at the end for questions
 
 ### Coda is...
 
-todo @ihm
+A fully-succinct, proof-of-stake blockchain and cryptocurrency.
 
-* something
-* we love OCaml just like tezos
+!!!
+
+<img src="img/1.png" width="100%" />
+
+!!!
+
+<img src="img/2.png" width="100%" />
+
+!!!
+
+<img src="img/3.png" width="100%" />
+
+!!!
+
+<img src="img/4.png" width="100%" />
+
+!!!
+
+<img src="img/5.png" width="100%" />
+
+!!!
+
+<img src="img/6.png" width="100%" />
+
+!!!
+
+<img src="img/drawing.png" width="100%" />
+
+!!!
+
+<img src="img/drawing-complete.png" width="100%" />
+
+!!!
+
+<img src="img/chain-of-proofs.png" width="100%" />
+
+!!!
+
+<img src="img/comp02.png" width="100%" />
+
+!!!
+
+<img src="img/comp04.png" width="100%" />
+
+!!!
+
+<img src="img/comp24.png" width="100%" />
 
 !!!
 
 ### zk-SNARKs
 
-todo @ihm (what is a snark, we have two kinds of snarks blocks + txns)
+- Proof that a computation was run correctly
+- Tiny (~1 kB) and easy to check (~10 ms)
+
+!!!
+
+### zk-SNARKs in Coda
+
+- Block producers make SNARKs
+- Blocks include a big tree-of-SNARKs SNARK
+  - Could be produced by anyone
 
 !!!
 
