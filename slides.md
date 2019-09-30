@@ -180,7 +180,8 @@ Note: The staker runs consensus (which we'll touch on later) and hopes to produc
 
 * Buy SNARKs from the Snarketplace
 * <!-- .element: class="fragment" data-fragment-index="1" --> Add new txns to cover prices of Snarketplace SNARKs and profit <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Gossip block around the network <!-- .element: class="fragment" data-fragment-index="2" -->
+* <!-- .element: class="fragment" data-fragment-index="2" --> Create the new succinct blockchain SNARK <!-- .element: class="fragment" data-fragment-index="2" -->
+* <!-- .element: class="fragment" data-fragment-index="3" --> Gossip it and some metadata around the network <!-- .element: class="fragment" data-fragment-index="3" -->
 
 Note: Found in snarkpool that snark workers have gossipped
 
