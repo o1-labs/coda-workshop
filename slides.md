@@ -313,15 +313,7 @@ Note: Look at
 
 ### Codaboros: No history, long forks
 
-todo @ihm
-
-Note: We're working on formal proofs of liveness/safety (right ihm?)
-
-!!!
-
-### Codaboros in a SNARK
-
-todo @ihm
+* Uses a scalar metric that decreases when density is low
 
 !!!
 
