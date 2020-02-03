@@ -1,12 +1,9 @@
 <!-- .slide: data-background="#2aa198" -->
 <!-- .slide: data-state="terminal" -->
-# Coda Protocol Deepdive
+# Coda Protocol and zkSNARKs
 
 By
-<a href="http://bkase.com">Izaak Meckler</a> / <a href="http://twitter.com/izmeckler">@imeckler</a> and
 <a href="http://bkase.com">Brandon Kase</a> / <a href="http://twitter.com/bkase_">@bkase_</a>
-
-Note: We'll save lots of time at the end for questions
 
 !!!
 
@@ -16,33 +13,100 @@ Note: We'll save lots of time at the end for questions
 
 !!!
 
-### Coda is...
-
-A fully-succinct, proof-of-stake blockchain and cryptocurrency.
-
-!!!
+### Existing blockchains
 
 <img src="img/1.png" width="100%" />
 
 !!!
 
+### Existing blockchains
+
 <img src="img/2.png" width="100%" />
 
 !!!
+
+### Existing blockchains
 
 <img src="img/3.png" width="100%" />
 
 !!!
 
+### Existing blockchains
+
 <img src="img/4.png" width="100%" />
 
 !!!
+
+### Existing blockchains
 
 <img src="img/5.png" width="100%" />
 
 !!!
 
+### Existing blockchains
+
 <img src="img/6.png" width="100%" />
+
+!!!
+
+### Hard to interact with
+
+<img src="img/other-blockchains.png" width="30%" />
+
+Note: Difficult to use
+
+!!!
+
+### Fewer full nodes
+
+<img src="img/full-nodes-over-time.png" width="100%" />
+
+Note: Risk of centralization
+
+!!!
+
+### Existing networks
+
+Large blockchains make them:
+
+1. Hard to interact with
+2. Risk of centralization
+
+!!!
+
+<img src="img/coda-compare.png" width="40%" />
+
+!!!
+
+### Coda
+
+* Stays Decentralized
+* <!-- .element: class="fragment" data-fragment-index="1" --> Easy to interact with <!-- .element: class="fragment" data-fragment-index="1" --> <span>=> more useful applications</span> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+Note: Which leads to
+
+!!!
+
+### Coda's Decentralization
+
+* Zero knowledge proofs (specifically zkSNARKs)
+* <!-- .element: class="fragment" data-fragment-index="1" --> Inclusive consensus <!-- .element: class="fragment" data-fragment-index="1" -->
+
+!!!
+
+### zk-SNARKs
+
+<span>*Proof* that a computation was run correctly</span> <span>that is *tiny* (~1 kB)</span> <!-- .element: class="fragment" data-fragment-index="1" --> <span>and *easy to check* (&lt;100 ms)</span> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+<span>^^ *Certificate* model</span> <!-- .element: class="fragment" data-fragment-index="3" -->
+
+!!!
+
+### zkSNARKs as certificates
+
+<img src="img/camera.jpg" width="60%" />
+
+Note: Photograph of something as a certificate that this thing exists
 
 !!!
 
@@ -62,210 +126,23 @@ A fully-succinct, proof-of-stake blockchain and cryptocurrency.
 
 !!!
 
-<img src="img/comp04.png" width="100%" />
-
-!!!
-
 <img src="img/comp24.png" width="100%" />
 
 !!!
 
-### zk-SNARKs
-
-- Proof that a computation was run correctly
-- Tiny (~1 kB) and easy to check (~10 ms)
+<img src="img/comp04.png" width="100%" />
 
 !!!
 
-### zk-SNARKs in Coda
+### Coda's Decentralization
 
-- Block producers make SNARKs
-- Blocks include a big tree-of-SNARKs SNARK
-  - Could be produced by anyone
-
-!!!
-
-### Roles in Coda
-
-![work together](img/work-together.jpg)
-
-> https://www.flickr.com/photos/isbg6/5029147286
-
-Note: 3 Roles!
+* Zero knowledge proofs (specifically zkSNARKs)
+* *Inclusive consensus*
 
 !!!
 
-### Roles in Coda
 
-1. Non-consensus
-
-!!!
-
-### Non-consensus Actor
-
-<img src="img/finger.png" width="40%" />
-
-> https://pixabay.com/vectors/finger-fist-glove-gun-hand-point-2029729/
-
-Note: Maybe you're delegating your stake, but you want to be able to check your balance, or make a transaction. Maybe you're using a hardware wallet
-
-!!!
-
-### Non-consensus Node
-
-![magnifying glass](img/magnifying.png)
-
-> https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Magnifying_glass_CC0.svg/512px-Magnifying_glass_CC0.svg.png
-
-Note: Non-consensus node; unlike a light-node in other networks, does fully verify the state (as easy as checking a snark)
-
-!!!
-
-### Non-consensus Node: Requirements
-
-* A computer
-* <!-- .element: class="fragment" data-fragment-index="2" --> Browser <!-- .element: class="fragment" data-fragment-index="2" -->
-
-Note: Very low resource requirements (on the order of 100kb of state) ; even Safari on ios
-
-!!!
-
-### Roles in Coda
-
-1. ~~Non-consensus~~
-2. Snark Worker
-
-!!!
-
-### Snark Worker
-
-<img src="img/pickaxe.png" width="40%" />
-
-> https://www.needpix.com/photo/download/1195100/pickax-tool-dig-build-construction-dwarf-mining-mine-design
-
-Note: The snark worker is unique to our network ;; to really understand what this actor does I need to talk about...
-
-!!!
-
-### Snarketplace
-
-<img src="img/marketplace.jpg" width="80%" />
-
-> https://pixabay.com/photos/marketplace-candy-sweets-market-4121997/
-
-Note: Snark worker is one of the actors in the snarketplace
-
-!!!
-
-### Snarketplace Details
-
-* Fixed-size work queue of txns that need to be SNARKed
-* <!-- .element: class="fragment" data-fragment-index="1" --> Transactions to the back of the queue  <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Snark workers peek at work at front of queue and sell the SNARKs <!-- .element: class="fragment" data-fragment-index="2" -->
-* <!-- .element: class="fragment" data-fragment-index="3" --> Block producers pop work at front, replace with SNARKs, and push transactions to the back <!-- .element: class="fragment" data-fragment-index="3" -->
-
-!!!
-
-### Snark Worker Perspective
-
-* Listens for new transactions added in blocks
-* <!-- .element: class="fragment" data-fragment-index="1" --> Create Transaction SNARKs (with fee attached) <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Gossips SNARKs around for later queue popping <!-- .element: class="fragment" data-fragment-index="2" -->
-
-Note: Fee and author public-key can be embedded inside the snark using a signature of knowledge ;; SNARKs are stored in a separate mempool from txns we call the snark pool
-
-!!!
-
-### Snark Worker Perspective
-
-<img src="img/merge-proofs-concrete.png"></img>
-
-Note: End result; tree of proofs
-
-!!!
-
-### Snark Worker: Snark Worker Node
-
-* Always-on, cheap compute
-* Public-keys only
-
-Note: Proving SNARKs constantly, and needs to offer lower fees than others. Doesn't need private keys ;; similar in specs to a proof-of-work node in other networks
-
-!!!
-
-### Roles in Coda
-
-1. ~~Non-conesnsus~~
-2. ~~Snark worker~~
-3. Block producer
-
-!!!
-
-### Block producer
-
-<img src="img/coin.png" width="80%" />
-
-> http://pngimg.com/uploads/coin/coin_PNG36877.png
-
-Note: "Validator" or "Baker"; this is a node that will stake and participate in the network
-
-!!!
-
-### Block producer
-
-<img src="img/block.png" width="80%" />
-
-> https://www.needpix.com/photo/download/598075/building-block-plastic-toy-red-architecture-free-vector-graphics-free-pictures-free-photos-free-images
-
-Note: The staker runs consensus (which we'll touch on later) and hopes to produce blocks. ...
-
-!!!
-
-### Recall: Snarketplace
-
-* Fixed-size work queue of txns that need to be SNARKed
-* <!-- .element: class="fragment" data-fragment-index="1" --> Transactions to the back of the queue  <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Snark workers peek at work at front of queue and sell the SNARKs <!-- .element: class="fragment" data-fragment-index="2" -->
-* <!-- .element: class="fragment" data-fragment-index="3" --> Block producers pop work at front, replace with SNARKs, and push transactions to the back <!-- .element: class="fragment" data-fragment-index="3" -->
-
-!!!
-
-### Block Production
-
-* Buy SNARKs from the Snarketplace
-* <!-- .element: class="fragment" data-fragment-index="1" --> Add new txns to cover prices of Snarketplace SNARKs and profit <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Create the new succinct blockchain SNARK <!-- .element: class="fragment" data-fragment-index="2" -->
-* <!-- .element: class="fragment" data-fragment-index="3" --> Gossip it and some metadata around the network <!-- .element: class="fragment" data-fragment-index="3" -->
-
-Note: Found in snarkpool that snark workers have gossipped
-
-!!!
-
-### Block Producer: Node requirements
-
-* Harddrive space to store the ledger
-* <!-- .element: class="fragment" data-fragment-index="1" --> Compute to produce SNARKs fast <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Good uptime <!-- .element: class="fragment" data-fragment-index="2" -->
-
-!!!
-
-### Roles in the network
-
-Three roles
-
-* <!-- .element: class="fragment" data-fragment-index="1" --> Non-conesnsus <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Snark worker <!-- .element: class="fragment" data-fragment-index="2" -->
-* <!-- .element: class="fragment" data-fragment-index="3" --> Block producer <!-- .element: class="fragment" data-fragment-index="3" -->
-
-!!!
-
-### Consensus
-
-<img src="img/builder.jpg" width="50%" />
-
-!!!
-
-### Ouroboros
+### Inclusive Consensus
 
 <img src="img/ouroboros.png" width="50%" />
 
@@ -275,56 +152,148 @@ Note: Discovered by the folks at IOHK
 
 !!!
 
-### Ouroboros variants
+### Inclusive Consensus
 
-* Vanilla
-* <!-- .element: class="fragment" data-fragment-index="1" --> Praos <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Genesis <!-- .element: class="fragment" data-fragment-index="2" -->
-* <!-- .element: class="fragment" data-fragment-index="3" --> Codaboros <!-- .element: class="fragment" data-fragment-index="3" -->
+<img src="img/pie.png" width="80%" />
 
 !!!
 
-### Ouroboros Basics
+### Inclusive Consensus
 
-* Time is broken into epochs
-* <!-- .element: class="fragment" data-fragment-index="1" --> Stake is counted a 1-2 epochs in the past <!-- .element: class="fragment" data-fragment-index="1" -->
-* <!-- .element: class="fragment" data-fragment-index="2" --> Select longest fork to decide which chain is stronger <!-- .element: class="fragment" data-fragment-index="2" -->
-
-Note: Like tezos, cycles of blocks are like epochs ;; just like in tezos, counted a few cycles in the past
-
-!!!
-
-### Praos: VRFs
-
-* Praos adds support for a secret, secure weighted dice roll
-* <!-- .element: class="fragment" data-fragment-index="1" --> Uses verifiable random functions <!-- .element: class="fragment" data-fragment-index="1" -->
+* No slashing
+* <!-- .element: class="fragment" data-fragment-index="1" --> No bonds <!-- .element: class="fragment" data-fragment-index="1" -->
+* <!-- .element: class="fragment" data-fragment-index="2" --> No minimum amount to stake <!-- .element: class="fragment" data-fragment-index="2" -->
+* <!-- .element: class="fragment" data-fragment-index="3" --> Easy to get started, low risk (because above) <!-- .element: class="fragment" data-fragment-index="3" -->
 
 !!!
 
-### Genesis: Long forks
+### Coda's Decentralization
 
-<img src="img/fork.jpg" width="70%" />
-
-> https://upload.wikimedia.org/wikipedia/commons/5/5d/A440_Tuning_Fork.jpg
-
-Note: Look at 
+* Zero knowledge proofs (specifically zkSNARKs)
+* Inclusive consensus
 
 !!!
 
-### Codaboros: No history, long forks
+### Coda
 
-* Uses a scalar metric that decreases when density is low
+* Stays Decentralized
+* <!-- .element: class="fragment" data-fragment-index="1" --> *Easy to interact with* <!-- .element: class="fragment" data-fragment-index="1" --> <span>=> more useful applications</span> <!-- .element: class="fragment" data-fragment-index="1" -->
+
+Note: Which leads to
+
+!!!
+
+### Coda Usability
+
+We are investing heavily in *user experience* for node operators and developers
+
+!!!
+
+### Coda Everywhere
+
+<img src="img/coda-everywhere.png" width="70%" />
+
+Note: Non-consensus node; unlike a light-node in other networks, does fully verify the state (as easy as checking a snark); no need to delegate trust
+
+!!!
+
+### Coda in the browser
+
+<img src="img/internet-explorer.png" width="50%" />
+
+!!!
+
+### Coda
+
+* Stays Decentralized
+* Easy to interact with <span> *=> more useful applications* </span> <!-- .element: class="fragment" data-fragment-index="1" -->
+
+!!!
+
+### Coda Applications
+
+Coda is early in development <span>custom tokens, tokenized assets, games</span> <!-- .element: class="fragment" data-fragment-index="1" -->
+
+!!!
+
+### Coda Applications
+
+And *zksnark apps*
+
+!!!
+
+### zk-SNARKs
+
+<span>*Proof* that a computation was run correctly</span> <span>that is *tiny* (~1 kB)</span> <!-- .element: class="fragment" data-fragment-index="1" --> <span>and *easy to check* (&lt;100 ms)</span> <!-- .element: class="fragment" data-fragment-index="2" -->
+
+<span>^^ *Certificate* model</span> <!-- .element: class="fragment" data-fragment-index="3" -->
+
+!!!
+
+### zkSNARKs
+
+<span>*Proof*</span> <span>that there exists secret data</span><!-- .element: class="fragment" data-fragment-index="1" --><span> that I know,</span><!-- .element: class="fragment" data-fragment-index="2" --><span> such that some *predicate* holds on the data</span><!-- .element: class="fragment" data-fragment-index="3" -->
+
+<span>^^ *Hiding* model</span><!-- .element: class="fragment" data-fragment-index="4" -->
+
+!!!
+
+### zkSNARK statements
+
+<span> _There exists_ data</span><span> _such that_ predicates hold on that data</span><!-- .element: class="fragment" data-fragment-index="1" -->
+
+Note: There exists DATA s.t. PROPERTY
+
+!!!
+
+### zkSNARK statements
+
+<span> _There exists_ some number x</span><span> _such that_ x^2 = 9</span><!-- .element: class="fragment" data-fragment-index="1" -->
+
+!!!
+
+### Coda zkSNARK Application
+
+<span> _There exists_ several bank accounts and real estate assets my business owns,</span> <span> _such that_ the sum of the accounts is above 10billion won</span><!-- .element: class="fragment" data-fragment-index="1" --> <span>therefore please give me a good interest rate on this business loan</span><!-- .element: class="fragment" data-fragment-index="2" -->
+
+<span>Your private information *remains* private</span><!-- .element: class="fragment" data-fragment-index="3" -->
+
+!!!
+
+### Coda
+
+* Stays Decentralized
+* Easy to interact with <span> => more useful applications </span>
+
+!!!
+
+### Genesis program
+
+<img src="img/genesis.png" width="100%" />
+
+!!!
+
+### Genesis Program
+
+https://codaprotocol.com/genesis
+
+* Help us strengthen Coda Protocol
+* <!-- .element: class="fragment" data-fragment-index="1" --> Genesis members will receive a distribution of *66,000 tokens* at launch <!-- .element: class="fragment" data-fragment-index="1" -->
+* <!-- .element: class="fragment" data-fragment-index="2" --> *1000 members* will be selected <!-- .element: class="fragment" data-fragment-index="2" -->
+* <!-- .element: class="fragment" data-fragment-index="3" --> At mainnet launch, *6.6% of the protocol will be distributed* in this manner <!-- .element: class="fragment" data-fragment-index="3" -->
+* <!-- .element: class="fragment" data-fragment-index="4" --> To learn more see the Terms and Conditions on the genesis page <!-- .element: class="fragment" data-fragment-index="4" -->
 
 !!!
 
 <!-- .slide: data-background="#2aa198" -->
 <!-- .slide: data-state="terminal" -->
-# Questions?
+# Thanks
 
-Join our Discord! <a href=https://bit.ly/CodaDiscord>bit.ly/CodaDiscord</a>
-
+* Community: <a href=https://bit.ly/CodaDiscord>bit.ly/CodaDiscord</a>
+* Follow our progress: <a href="https://twitter.com/codaprotocol">@CodaProtocol</a>
+* Website: <a href="https://codaprotocol.com">codaprotocol.com</a>
+* Genesis Program: <a href="https://codaprotocol.com/genesis">codaprotocol.com/genesis</a>
 
 By
-<a href="http://bkase.com">Izaak Meckler</a> / <a href="http://twitter.com/izmeckler">@imeckler</a> and
 <a href="http://bkase.com">Brandon Kase</a> / <a href="http://twitter.com/bkase_">@bkase_</a>
 

@@ -358,7 +358,7 @@ body {
   .reveal .controls .navigate-left:hover, .reveal .controls .navigate-left.enabled:hover {
     border-right-color: #3AC9BF; }
 
-.terminal .reveal .slides section p, .terminal .reveal .slides section h1, .terminal .reveal .slides section h2, .terminal .reveal .slides section h3, .terminal .reveal .slides section h4, .terminal .reveal .slides section h5, .terminal .reveal .slides section h6 {
+.terminal .reveal .slides section p, .terminal .reveal .slides section h1, .terminal .reveal .slides section h2, .terminal .reveal .slides section h3, .terminal .reveal .slides section h4, .terminal .reveal .slides section h5, .terminal .reveal .slides section h6, .terminal .reveal .slides section ul {
   color: #f0f6f5; }
 
 .terminal .reveal .slides section a {
